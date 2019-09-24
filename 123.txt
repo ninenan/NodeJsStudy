@@ -3,3 +3,7 @@
 2）切换分支 git checkout -b wxg  这个操作是创建wxg并切换到wxg分支  On branch wxg 这里提示你在哪个分支上
 3）就是提交代码那些操作 git add .    git commit -m "做了哪些"
 4）切换到master分支上，注意看代码的变化
+5）切换到master上后，先git pull
+6）git merge 分支名称  git merge wxg
+7）遇到代码冲突 解决冲突 然后git add .  git commit -m "XXX"
+8）git push 
