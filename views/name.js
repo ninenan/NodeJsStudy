@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'Nw',
+  name: 'Nwss',
   showName: function () {
     return this.name
   }
