@@ -7,7 +7,9 @@ HTTP.createServer((request, response) => {
     "Content-Type": "text/html;charset=utf-8"
   });
   if (request.url !== "/favicon.ico") {
-    console.log(111);
+    console.log("分支切换");
+    console.log("分支切换");
+    console.log("分支切换");
     response.end(USER.returnName());
   }
 }).listen(8089);
