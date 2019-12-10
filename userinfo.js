@@ -4,6 +4,6 @@ function userInfo() {
   this.age = '18'
 }
 userInfo.prototype.returnName = function () {
-  return this.name
+  return this.age
 }
 module.exports = userInfo;
