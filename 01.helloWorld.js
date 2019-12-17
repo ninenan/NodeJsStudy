@@ -19,8 +19,6 @@ HTTP.createServer((request, response) => {
     // response.end("hello node.js");
     // console.log('url', request.url);
     const path = URL.parse(request.url, true).pathname.substring(1);
-    // console.log(path);
-    // console.log('router', router);
     try {
       router[path](response, request);
     } catch (error) {
