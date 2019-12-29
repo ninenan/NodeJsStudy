@@ -30,7 +30,7 @@ chatServe.on('connection', client => {
 
 function subscription(message, client) {
   for (const key in clientMap) {
-    clientMap[key].write(client.name + 'say:' + message);
+    clientMap[key].write(client.name + 'say:' + message+'\n');
   }
 }
 

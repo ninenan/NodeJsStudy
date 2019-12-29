@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  #chatRoom {
+    width: 400px;
+    height: 400px;
+    overflow: auto;
+    border: 1px solid #cccc;
+  }
+</style>
+
+<body>
+  <div id="chatRoom">
+  </div>
+  <input type="text" name="sayVal" id="sayVal">
+  <button name="send" id="send">发送</button>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.slim.min.js">
+
+  </script>
+  <script>
+    const ws = new WebSocket('ws://192.168.0.106:9000');
+    ws.open = function () {
+      console.log('open');
+    };
+    ws.onmessage = function (event) {
+      const chatRoom = document.querySelector('#chatRoom');
+      chatRoom.innerHTML += event.data + '</br>';
+    };
+    ws.onclose = function () {
+      // 关闭
+      console.log('close');
+    };
+    ws.onerror = function (err) {
+      // 报错信息
+      console.log(err);
+    };
+
+    $('#send').click(() => {
+      ws.send($('#sayVal').val());
+    });
+  </script>
+
+</body>
+
+</html>
