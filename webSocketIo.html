@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  #chatRoom {
+    width: 400px;
+    height: 400px;
+    overflow: auto;
+    border: 1px solid #cccc;
+  }
+</style>
+
+<body>
+  <div id="chatRoom">
+  </div>
+  <input type="text" name="sayVal" id="sayVal">
+  <button name="send" id="send">发送</button>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
+  <script>
+    var socketIo = null;
+    socketIo = io.connect('http://192.168.0.106:9000');
+    socketIo.on('connect', () => {
+      // 链接服务器
+      console.log('connect');
+    });
+    socketIo.on('message', msg => {
+      // 监听
+      const chatRoom = document.querySelector('#chatRoom');
+      chatRoom.innerHTML += msg + '<br>';
+    });
+    socketIo.on('disconnect', () => {
+      // 断开连接
+      console.log('disconnect');
+    })
+    $('#send').click(() => {
+      socketIo.send($('#sayVal').val());
+    });
+  </script>
+
+</body>
+
+</html>
