@@ -12,7 +12,7 @@ var options = {
 };
 var resData = '';
 var request = HTTP.request(options, response => {
-  console.log(response.statusCode) // 状态码
+  console.log(response.statusCode); // 状态码
   if (response.statusCode === 200) {
     // console.log(response)
   }
