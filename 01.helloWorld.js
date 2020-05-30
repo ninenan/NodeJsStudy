@@ -18,13 +18,13 @@ HTTP.createServer((request, response) => {
   if (request.url !== "/favicon.ico") {
     // response.end("hello node.js");
     // console.log('url', request.url);
-    const path = URL.parse(request.url, true).pathname.substring(1);
-    try {
-      router[path](response, request);
-    } catch (error) {
-      // 捕获异常的话 强制跳到首页
-      router.home(response, request);
-    }
+    // const path = URL.parse(request.url, true).pathname.substring(1);
+    // try {
+    //   router[path](response, request);
+    // } catch (error) {
+    //   // 捕获异常的话 强制跳到首页
+    //   router.home(response, request);
+    // }
     // response.end(NAME.showName()); // 这里输出Nw
     // fs.readFile('123.txt', 'utf8', (err, data) => {
     //   if (err) console.log(err);
