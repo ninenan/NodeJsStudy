@@ -9,17 +9,17 @@ const fs = require('fs');
 // let readDataSync = fs.readFileSync('message.txt', 'utf8');
 // console.log(readDataSync); // 我最快 但是文件当中的内容其实是-我最快再次追加的数据 因为这是同步读取文件 
 
+// fs.readFile('message.txt', 'utf8', (err, data) => {
+//   // 默认是buffer二进制读取 但是可以设置中间参数为utf-8
+//   if (err) throw err;
+//   console.log(data); // 我最快再次追加的数据
+// });
+
 // fs.writeFile('message.txt','我是覆盖性写入,会把所有的内容全部变成我123123', err => {
 //   // 覆盖性写入 如果没有该文件 也会自己创建
 //   if (err) throw err
 //   console.log('success')
 // })
-
-// fs.readFile('new_message.txt', 'utf8', (err, data) => {
-//   // 默认是buffer二进制读取 但是可以设置中间参数为utf-8
-//   if (err) throw err;
-//   console.log(data); // 我最快再次追加的数据
-// });
 
 // fs.unlink('message.txt', (err, data) => {
 //   // 异步删除文件
