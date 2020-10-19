@@ -42,4 +42,5 @@ function subscription(message, client) {
 
 http.listen(9000, () => {
   console.log("server is running 9000");
+  console.log("test");
 });
