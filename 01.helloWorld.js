@@ -31,6 +31,7 @@ HTTP.createServer((request, response) => {
     //   response.end(data);
     // })
     // response.end();
+    // test-git快捷键
   }
 }).listen(8088); //8088 为监听服务器端口号
 console.log("server is running  http://localhost:8088");
